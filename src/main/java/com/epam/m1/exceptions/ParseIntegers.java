@@ -31,7 +31,7 @@ public class ParseIntegers {
             }
             // todo: complete it
         }
-        justWords = String.join(" ", newWords);
+        justWords =" " + String.join(" ", newWords);
         System.out.println("Sum is " + sum);
         System.out.println("Just words:" + justWords);
     }
