@@ -1,5 +1,6 @@
 package com.epam.m1.exceptions;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -19,18 +20,18 @@ public class ParseIntegers {
         Iterator<String> words = WORDS.iterator();
         int sum = 0;
         String justWords = "";
+        List<String> newWords = new ArrayList<>();
         while (words.hasNext()) {
             String next = words.next();
             try {
                 int number = Integer.parseInt(next);
                 sum = sum + number;
             }catch (NumberFormatException e){
-                System.out.println();
-            }finally {
-                justWords += " " +next;
+                newWords.add(next);
             }
             // todo: complete it
         }
+        justWords = String.join(" ", newWords);
         System.out.println("Sum is " + sum);
         System.out.println("Just words:" + justWords);
     }
